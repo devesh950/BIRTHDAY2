@@ -6,23 +6,25 @@ import styles from './ChatTheaterSection.module.css'
 
 export default function ChatTheaterSection({ content, theme }: SectionComponentProps) {
   const {
-    heading = 'Animated Memory Room 👦💕🌸',
-    subheading = 'Watch our avatars relive iconic conversations & memories!',
+    heading = 'Interactive Memory Room 💬✨',
+    subheading = 'Watch character avatars relive sweet conversations & shared moments!',
+    senderName = 'Sender 👑',
+    recipientName = 'Recipient 💕',
     scenes = [
       {
-        title: '💬 Scene 1 — Where It All Began',
-        boyText: '"Sitting with phone 📱... typing message: \'Hi... Hello... Koi free hai kya?\' 💬"',
-        girlText: '"Receives notification 🔔... smiles 😊... typing reply: \'Haan... Hum hain free... aapke liye.\' ❤️"',
+        title: '💬 Scene 1 — The First Message',
+        boyText: '"Sitting with phone 📱... typing message: \'Hey! Hope you are having a wonderful day!\' 💬"',
+        girlText: '"Receives notification 🔔... smiles 😊... typing reply: \'Hi! That just made my day so much brighter!\' ❤️"',
       },
       {
-        title: '💬 Scene 2 — Late Night Chats',
-        boyText: '"1 AM clock ticks 🌙... \'So jaao ab hi...\'"',
-        girlText: '"\'Nahi, thodi der aur baat karte hain... 😊\'"',
+        title: '💬 Scene 2 — Late Night Conversations',
+        boyText: '"Looking at the clock 🌙... \'Time to get some sleep soon!\'"',
+        girlText: '"\'Just five more minutes! These talks are the best part of the day... 😊\'"',
       },
       {
-        title: '💬 Scene 3 — The Secret Nicknames',
-        boyText: '"\'Arey O Bandariya! 🐒\'"',
-        girlText: '"\'Haan O Bandar! 😂💕\'"',
+        title: '💬 Scene 3 — Inside Jokes',
+        boyText: '"\'Remember that hilarious moment we couldn\'t stop laughing at? 😂\'"',
+        girlText: '"\'Oh absolutely! I still smile whenever I think about it! 💕\'"',
       },
     ],
   } = content || {}
@@ -43,7 +45,7 @@ export default function ChatTheaterSection({ content, theme }: SectionComponentP
   return (
     <section className={styles.section}>
       <div className={styles.secHead}>
-        <span className={styles.secBadge}>🎭 ANIMATED MEMORY THEATER</span>
+        <span className={styles.secBadge}>🎭 MEMORY THEATER</span>
         <h2 className={styles.heading}>{heading}</h2>
         <p className={styles.subheading}>{subheading}</p>
       </div>
@@ -79,14 +81,14 @@ export default function ChatTheaterSection({ content, theme }: SectionComponentP
 
         {/* Stage Room */}
         <div className={styles.stage}>
-          {/* Left Character (Boy) */}
+          {/* Left Character (Sender) */}
           <div className={styles.charBox}>
             <div className={`${styles.bubble} ${styles.bubbleLeft}`}>
               <p>{scene.boyText}</p>
             </div>
             <div className={styles.avatarWrap}>
               <span className={styles.avatarIcon}>👦</span>
-              <span className={styles.charName}>Boy 👑</span>
+              <span className={styles.charName}>{senderName}</span>
             </div>
           </div>
 
@@ -95,14 +97,14 @@ export default function ChatTheaterSection({ content, theme }: SectionComponentP
             <span className={styles.beamHeart}>❤️</span>
           </div>
 
-          {/* Right Character (Girl) */}
+          {/* Right Character (Recipient) */}
           <div className={styles.charBox}>
             <div className={`${styles.bubble} ${styles.bubbleRight}`}>
               <p>{scene.girlText}</p>
             </div>
             <div className={styles.avatarWrap}>
               <span className={styles.avatarIcon}>🌸</span>
-              <span className={styles.charName}>Girl 👑💕</span>
+              <span className={styles.charName}>{recipientName}</span>
             </div>
           </div>
         </div>

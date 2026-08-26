@@ -6,25 +6,14 @@ import styles from './StoryBookSection.module.css'
 
 export default function StoryBookSection({ content, theme }: SectionComponentProps) {
   const {
-    heading = 'Hamari Kahani',
-    subheading = 'A Journey Through Our Memories 🤍 Dec 2020 – 2022',
-    pin = '0509',
+    heading = 'Our Story & Journey 📖',
+    subheading = 'A Beautiful 3D Memoir of Shared Moments 🤍',
+    pin = '1234',
     chapters = [
-      { id: 'prologue', title: 'Prologue', badge: '📖 PROLOGUE', quote: '"Har kahani ki shuruaat ek \'Hello\' se nahi hoti... Lekin hamari hui thi." 🤍✨', paragraphs: ['Kuch log zindagi mein achanak aate hain... aur bina bataye hamari duniya badal dete hain. 🌸', 'Ye sirf ek Birthday Gift nahi... Ye meri taraf se likhi hui hamari kahani hai. 📖✨'] },
-      { id: 'ch1', title: 'Where It All Began', badge: 'CHAPTER 1', quote: '"Every beautiful story starts with a simple hello..." 💌', paragraphs: ['Us din sab kuch bilkul normal tha. Maine bas ek random sa message bheja: "Hi... Hello... Koi free hai kya?"', 'Kuch hi seconds baad... Tumhara reply aaya: "Haan... Hum hain free... aapke liye." ❤️'] },
-      { id: 'ch2', title: 'Strangers to Best Friends', badge: 'CHAPTER 2', quote: '"Kabhi kabhi strangers hi sabse apne ban jaate hain..." 🌸', paragraphs: ['Subah Good Morning... Din bhar random messages... Shaam ko bakchodi... Aur raat ko endless conversations.', 'Tum sirf ek friend nahi rahi. Tum meri aadat ban gayi. 🌸'] },
-      { id: 'ch3', title: 'Best Friends to Love', badge: 'CHAPTER 3', quote: '"Pyaar hamesha I Love You se shuru nahi hota..." ❤️', paragraphs: ['Pata hi nahi chala kab... Best Friends se feelings shuru ho gayi.', 'Pata hi nahi chala... Kab tum meri favourite notification ban gayi. ❤️'] },
-      { id: 'ch4', title: 'The First Distance', badge: 'CHAPTER 4', quote: '"Kabhi kabhi sirf kuch din ki doori bhi bahut lambi lagti hai..." 🌧️', paragraphs: ['Pehli baar samajh aaya ki kisi ki aadat kitni gehri ho sakti hai.', 'Main tumse baat kiye bina reh hi nahi sakta tha. 🤍'] },
-      { id: 'ch5', title: 'The Day You Left For Hostel', badge: 'CHAPTER 5', quote: '"Kabhi kabhi alvida sirf kuch mahino ke liye hota hai..." 🏫', paragraphs: ['Tumhe hostel jana tha. Main khush tha lekin andar se sad tha.', 'Maine wait kiya. Kyunki yakeen tha — tum wapas aaogi. 🤍'] },
-      { id: 'ch6', title: 'Six Months of Waiting', badge: 'CHAPTER 6', quote: '"Intezaar tab aur mushkil ho jaata hai, jab umeed abhi bhi zinda ho." ⏳', paragraphs: ['6 mahine... Na WhatsApp message, na call, bas khamoshi.', 'Dil ke kisi kone mein yakeen tha... Ek din tum zaroor wapas aaogi. 🤍'] },
-      { id: 'ch7', title: 'The 1 AM Message', badge: 'CHAPTER 7', quote: '"Kabhi kabhi sirf ek message, mahino ka intezaar khatam kar deta hai." 🌙💌', paragraphs: ['1 baje raat ko message bheja. Tumhara reply aaya: "Bandar." 🐒❤️', 'Woh ek word chhe mahino ke intezaar ka jawab tha. 🥹'] },
-      { id: 'ch8', title: 'Finding Each Other Again', badge: 'CHAPTER 8', quote: '"Kismat agar chahe... toh bichhde hue logon ko dobara mila hi deti hai." ✨🤍', paragraphs: ['Wapas aane ke baad sab thik ho gaya. Same comfort, same jokes.', 'Chhoti chhoti baatein hi hamari duniya thi. 🌸'] },
-      { id: 'ch9', title: 'The Golden Days', badge: 'CHAPTER 9', quote: '"Kuch waqt kabhi wapas nahi aata... lekin uski yaadein hamesha saath rehti hain." 🌸✨', paragraphs: ['Meri life ka sabse beautiful phase... Woh do saal. ❤️', 'Kaash... Waqt wahi ruk jaata. 🌙'] },
-      { id: 'ch10', title: 'When Everything Changed', badge: 'CHAPTER 10', quote: '"Har kahani ka ek aisa chapter hota hai... jise padhna sabse mushkil hota hai." 💔', paragraphs: ['2022 mein sab badal gaya. replies kam ho gaye.', 'Tumhari khushi meri khwahish se zyada important thi. Jahan bhi raho, khush raho. 🌸'] },
-      { id: 'ch11', title: "I'm Sorry 🤍", badge: 'CHAPTER 11', quote: '"Kabhi kabhi sabse mushkil do words hote hain... I\'m Sorry." 🤍', paragraphs: ['Sorry har us baat ke liye jo maine galti se keh di.', 'Main dil se apni har galti accept karta hoon. 🤍'] },
-      { id: 'ch12', title: 'Thank You ❤️', badge: 'CHAPTER 12', quote: '"Kuch log zindagi mein aate hain... aur hamesha ke liye yaadein de jaate hain." ✨', paragraphs: ['Thank you meri life mein aane ke liye, har smile aur har conversation ke liye.', 'Us safar ka har pal mere liye priceless rahega. ❤️'] },
-      { id: 'ch13', title: 'Happy Birthday 🎂', badge: 'CHAPTER 13', quote: '"Aaj ka din sirf tumhara hai." 🎂🎉', paragraphs: ['Main dil se dua karta hoon ki tumhari life khushiyon se bhari rahe.', 'Happy Birthday, Bandariya! 🐒💕'] },
-      { id: 'epilogue', title: 'Epilogue — One Last Thing', badge: '🌌 EPILOGUE', quote: '"Kuch kahaniyan khatam nahi hoti... woh bas yaadein ban jaati hain." 🤍', paragraphs: ['Thank you meri life ke sabse khubsurat do saal dene ke liye.', 'The End 🤍'] },
+      { id: 'ch1', title: 'Where It All Began', badge: 'CHAPTER 1', quote: '"Every journey starts with a simple moment..." 💌', paragraphs: ['It started as an ordinary day, until an unexpected conversation changed everything.', 'Looking back, that small beginning turned into one of the most meaningful chapters of life. ✨'] },
+      { id: 'ch2', title: 'Growing Closer', badge: 'CHAPTER 2', quote: '"Small daily conversations turn strangers into best friends..." 🌸', paragraphs: ['Daily check-ins, shared laughs, and late-night talks became a comforting routine.', 'With every message and call, the bond grew deeper and more effortless. 🌸'] },
+      { id: 'ch3', title: 'Unforgettable Memories', badge: 'CHAPTER 3', quote: '"Moments captured in memory are priceless..." ❤️', paragraphs: ['From inside jokes to shared milestones, every single moment built a unique story.', 'These memories hold a special place in the heart forever. 🌸'] },
+      { id: 'ch4', title: 'A Wish for the Future', badge: 'CHAPTER 4', quote: '"May the road ahead be filled with light and joy..." 🌟', paragraphs: ['Wishing endless happiness, success, and peace for every single step ahead.', 'Happy Birthday and warm wishes today and always! 🎂✨'] },
     ],
   } = content || {}
 
@@ -59,7 +48,7 @@ export default function StoryBookSection({ content, theme }: SectionComponentPro
   return (
     <section className={styles.section}>
       <div className={styles.secHead}>
-        <span className={styles.secBadge}>📖 A JOURNEY I&apos;LL NEVER FORGET</span>
+        <span className={styles.secBadge}>📖 A JOURNEY TO REMEMBER</span>
         <h2 className={styles.heading}>{heading}</h2>
         <p className={styles.subheading}>{subheading}</p>
       </div>
@@ -70,11 +59,11 @@ export default function StoryBookSection({ content, theme }: SectionComponentPro
           {/* Left Page: Book Cover */}
           <div className={styles.bookLeft}>
             <div className={styles.coverInner}>
-              <span className={styles.stamp}>A MEMOIR</span>
-              <h2 className={styles.coverTitle}>Hamari<br /><em>Kahani</em></h2>
-              <p className={styles.coverSub}>A Journey Through Our Memories 🤍</p>
+              <span className={styles.stamp}>MEMOIR</span>
+              <h2 className={styles.coverTitle}>Our<br /><em>Story</em></h2>
+              <p className={styles.coverSub}>A Journey Through Shared Memories 🤍</p>
               <blockquote className={styles.coverQuote}>
-                &ldquo;Kuch log zindagi mein achanak aate hain... aur bina bataye hamari duniya badal dete hain.&rdquo;
+                &ldquo;Some moments stay with us forever, woven into the story of who we are.&rdquo;
               </blockquote>
             </div>
           </div>
@@ -110,8 +99,8 @@ export default function StoryBookSection({ content, theme }: SectionComponentPro
       {!isUnlocked && (
         <div className={styles.lockCard} id="story-pin-lock" style={{ borderColor: `${theme.primaryColor}55` }}>
           <div className={styles.lockAnim}>🔐</div>
-          <h3 className={styles.lockTitle}>Unlock Full Story</h3>
-          <p className={styles.lockSub}>Enter secret 4-digit code to read all 15 detailed chapters. 🤍</p>
+          <h3 className={styles.lockTitle}>Unlock Story Chapters</h3>
+          <p className={styles.lockSub}>Enter 4-digit code to reveal all detailed chapters. 🤍</p>
 
           <div className={styles.pinDisplay}>
             {[0, 1, 2, 3].map(i => (
@@ -122,7 +111,7 @@ export default function StoryBookSection({ content, theme }: SectionComponentPro
             ))}
           </div>
 
-          {pinError && <p className={styles.errorText}>Incorrect Passcode! Try again (Hint: 0509)</p>}
+          {pinError && <p className={styles.errorText}>Incorrect Code! Try again (Default: {pin})</p>}
 
           <div className={styles.pinPad}>
             {['1', '2', '3', '4', '5', '6', '7', '8', '9'].map(num => (
@@ -141,8 +130,8 @@ export default function StoryBookSection({ content, theme }: SectionComponentPro
       {isUnlocked && (
         <div className={styles.unlockedContainer}>
           <div className={styles.unlockedHeader}>
-            <span>🔓 Hamari Kahani — Our Story Unlocked 🤍</span>
-            <button className="btn btn-sm btn-ghost" onClick={() => setIsUnlocked(false)}>🔒 Lock Again</button>
+            <span>🔓 Story Unlocked 🤍</span>
+            <button className="btn btn-sm btn-ghost" onClick={() => setIsUnlocked(false)}>🔒 Lock Story</button>
           </div>
 
           <div className={styles.chapterCard} style={{ borderColor: `${theme.primaryColor}44` }}>

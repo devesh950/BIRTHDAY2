@@ -9,7 +9,7 @@ export default function CakeSection({ content, theme }: SectionComponentProps) {
     heading = 'Make a Wish! 🎂',
     instruction = 'Tap the candles or button to blow them out ✨',
     wishMessage = 'May all your dreams come true! 🎉',
-    ribbonName = 'QUEEN 👑💕',
+    ribbonName = 'SPECIAL DAY 🎉',
   } = content || {}
 
   const [lit, setLit] = useState<boolean[]>([true, true, true, true, true])
@@ -78,22 +78,22 @@ export default function CakeSection({ content, theme }: SectionComponentProps) {
 
         {/* 3 Multi-Tier Cake */}
         <div className={styles.pureCake}>
-          {/* Top Tier: Strawberry Pink */}
+          {/* Top Tier */}
           <div className={`${styles.cakeTier} ${styles.tierTop}`}>
             <div className={styles.creamTop} />
           </div>
 
-          {/* Mid Tier: Royal Gold */}
+          {/* Mid Tier */}
           <div className={`${styles.cakeTier} ${styles.tierMid}`}>
             <div className={styles.pearls}>
               <span>🍓</span><span>✨</span><span>🍓</span><span>✨</span><span>🍓</span>
             </div>
           </div>
 
-          {/* Bottom Tier: Deep Velvet Purple with Name Ribbon */}
+          {/* Bottom Tier with Customizable Name Ribbon */}
           <div className={`${styles.cakeTier} ${styles.tierBot}`}>
             <div className={styles.ribbon}>
-              <span>👑 {ribbonName}</span>
+              <span>✨ {ribbonName}</span>
             </div>
           </div>
 
@@ -113,7 +113,7 @@ export default function CakeSection({ content, theme }: SectionComponentProps) {
 
       {allBlown && (
         <div className={styles.celebrationText}>
-          🎉 Happy Birthday! Candles Blown & Wish Sent to the Universe! ❤️
+          🎉 Candles Blown & Wish Sent to the Universe! ❤️
         </div>
       )}
     </section>

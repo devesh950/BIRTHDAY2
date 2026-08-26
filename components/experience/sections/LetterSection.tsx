@@ -7,11 +7,11 @@ import styles from './LetterSection.module.css'
 
 export default function LetterSection({ content, theme }: SectionComponentProps) {
   const {
-    heading = 'Personal Birthday Letter',
-    body = `Aaj tumhare birthday par, main bas itna kehna chahta hoon ki tum meri life ki sabse khoobsurat memories mein se ek ho. ❤️\n\nDecember 2020 se lekar aaj tak, har conversation, har hassi, aur har ek moment hamesha mere dil ke kareeb rahega.\n\nMain God se yahi pray karta hoon ki tumhari life mein hamesha success, khushiyan, aur peace rahe. Tum apne saare dreams poore karo aur hamesha muskurati raho. 😊🌸`,
-    from = 'With Best Wishes & Love 🤍',
-    to = 'Miss Yadav',
-    signature = '— Happy Birthday! 🐒💕',
+    heading = 'A Special Letter for You',
+    body = `I wanted to take a moment to say how much you mean to me. ❤️\n\nEvery shared conversation, laugh, and moment will always hold a special place in my heart.\n\nI hope your year ahead is filled with joy, peace, and endless success. May all your dreams come true! 😊🌸`,
+    from = 'With Warm Wishes 🤍',
+    to = 'Someone Special',
+    signature = '— With All My Best 🌸',
   } = content as LetterContent
 
   const [isOpen, setIsOpen] = useState(false)
@@ -23,8 +23,8 @@ export default function LetterSection({ content, theme }: SectionComponentProps)
       {/* Wax Stamp Envelope Sealed Preview Card */}
       <div className={styles.waxCard} onClick={() => setIsOpen(true)} style={{ borderColor: `${theme.primaryColor}55` }}>
         <div className={styles.waxIcon}>💌</div>
-        <h3 className={styles.waxTitle}>{heading} for {to}</h3>
-        <p className={styles.waxSub}>Sealed with a red wax stamp. Tap to break the seal and read... 🤍</p>
+        <h3 className={styles.waxTitle}>{heading}</h3>
+        <p className={styles.waxSub}>Sealed with a wax stamp. Tap to break the seal and read... 🤍</p>
         <button className={styles.waxBtn} style={{ background: `linear-gradient(135deg, ${theme.primaryColor}, ${theme.secondaryColor})` }}>
           ✉️ Open Handwritten Letter 💌
         </button>
