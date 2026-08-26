@@ -14,6 +14,22 @@ interface Props {
 
 type PreviewMode = 'desktop' | 'tablet' | 'mobile'
 
+const AVAILABLE_SECTIONS = [
+  { type: 'hero', name: 'Hero Section', icon: '🌟' },
+  { type: 'story_book', name: '3D Story Book', icon: '📖' },
+  { type: 'chat_theater', name: 'Chat Theater', icon: '🎭' },
+  { type: 'cake', name: 'Birthday Cake', icon: '🎂' },
+  { type: 'flip_cards', name: 'Flip Cards', icon: '🃏' },
+  { type: 'quiz', name: 'Memory Quiz', icon: '🤔' },
+  { type: 'scratch_card', name: 'Scratch Card', icon: '🎁' },
+  { type: 'crystal_ball', name: 'Crystal Ball', icon: '🔮' },
+  { type: 'vibe_check', name: 'Vibe Check', icon: '📊' },
+  { type: 'memory_capsules', name: 'Memory Capsules', icon: '💬' },
+  { type: 'letter', name: 'Personal Letter', icon: '💌' },
+  { type: 'timeline', name: 'Timeline', icon: '⏳' },
+  { type: 'ending', name: 'Ending Section', icon: '🏁' },
+]
+
 export default function EditorPage(props: Props) {
   const params = use(props.params)
   const router = useRouter()
@@ -24,6 +40,7 @@ export default function EditorPage(props: Props) {
   const [publishing, setPublishing] = useState(false)
   const [previewMode, setPreviewMode] = useState<PreviewMode>('mobile')
   const [activeSection, setActiveSection] = useState<number | null>(null)
+  const [showAddModal, setShowAddModal] = useState(false)
 
   useEffect(() => {
     fetchExperience()
@@ -80,9 +97,55 @@ export default function EditorPage(props: Props) {
     newSections[index] = { ...newSections[index], ...updates } as ExperienceSection
     const newJson = { ...experienceJson, sections: newSections }
     setExperienceJson(newJson)
-    // Debounced save
-    const timer = setTimeout(() => save(newJson), 2000)
-    return () => clearTimeout(timer)
+    save(newJson)
+  }
+
+  const addSection = (type: string) => {
+    if (!experienceJson) return
+    const newSection: ExperienceSection = {
+      type,
+      content: getDefaultContentForType(type),
+      isVisible: true,
+    } as any
+
+    const newJson = { ...experienceJson, sections: [...experienceJson.sections, newSection] }
+    setExperienceJson(newJson)
+    setActiveSection(newJson.sections.length - 1)
+    setShowAddModal(false)
+    toast.success(`Added ${formatSectionType(type)}!`)
+    save(newJson)
+  }
+
+  const deleteSection = (index: number, e: React.MouseEvent) => {
+    e.stopPropagation()
+    if (!experienceJson) return
+    if (experienceJson.sections.length <= 1) {
+      toast.error('Experience must have at least one section')
+      return
+    }
+    const newSections = experienceJson.sections.filter((_, i) => i !== index)
+    const newJson = { ...experienceJson, sections: newSections }
+    setExperienceJson(newJson)
+    if (activeSection === index) setActiveSection(null)
+    toast.success('Section deleted')
+    save(newJson)
+  }
+
+  const moveSection = (index: number, direction: 'up' | 'down', e: React.MouseEvent) => {
+    e.stopPropagation()
+    if (!experienceJson) return
+    const targetIndex = direction === 'up' ? index - 1 : index + 1
+    if (targetIndex < 0 || targetIndex >= experienceJson.sections.length) return
+
+    const newSections = [...experienceJson.sections]
+    const temp = newSections[index]
+    newSections[index] = newSections[targetIndex]
+    newSections[targetIndex] = temp
+
+    const newJson = { ...experienceJson, sections: newSections }
+    setExperienceJson(newJson)
+    setActiveSection(targetIndex)
+    save(newJson)
   }
 
   const previewWidths = { desktop: '100%', tablet: '768px', mobile: '390px' }
@@ -142,20 +205,44 @@ export default function EditorPage(props: Props) {
         {/* Left sidebar — sections */}
         <aside className={styles.leftPanel}>
           <div className={styles.leftPanelHeader}>
-            <h3 className={styles.leftPanelTitle}>Sections</h3>
+            <h3 className={styles.leftPanelTitle}>SECTIONS</h3>
+            <button className={styles.addBtn} onClick={() => setShowAddModal(true)}>
+              + Add
+            </button>
           </div>
 
           <div className={styles.sectionList}>
             {experienceJson?.sections.map((section, i) => (
-              <button
+              <div
                 key={i}
                 className={`${styles.sectionItem} ${activeSection === i ? styles.sectionItemActive : ''}`}
                 onClick={() => setActiveSection(i)}
               >
                 <span className={styles.sectionItemIcon}>{getSectionIcon(section.type)}</span>
                 <span className={styles.sectionItemLabel}>{formatSectionType(section.type)}</span>
-                <span className={styles.sectionItemHandle}>⋮⋮</span>
-              </button>
+                <div className={styles.sectionActions}>
+                  <button
+                    className={styles.actionIconBtn}
+                    onClick={(e) => moveSection(i, 'up', e)}
+                    disabled={i === 0}
+                  >
+                    ▲
+                  </button>
+                  <button
+                    className={styles.actionIconBtn}
+                    onClick={(e) => moveSection(i, 'down', e)}
+                    disabled={i === experienceJson.sections.length - 1}
+                  >
+                    ▼
+                  </button>
+                  <button
+                    className={styles.actionIconBtn}
+                    onClick={(e) => deleteSection(i, e)}
+                  >
+                    🗑️
+                  </button>
+                </div>
+              </div>
             ))}
           </div>
         </aside>
@@ -177,7 +264,7 @@ export default function EditorPage(props: Props) {
 
         {/* Right sidebar — section editor */}
         <aside className={styles.rightPanel}>
-          {activeSection !== null && experienceJson ? (
+          {activeSection !== null && experienceJson && experienceJson.sections[activeSection] ? (
             <SectionEditor
               section={experienceJson.sections[activeSection]}
               index={activeSection}
@@ -191,6 +278,30 @@ export default function EditorPage(props: Props) {
           )}
         </aside>
       </div>
+
+      {/* Add Section Selection Modal */}
+      {showAddModal && (
+        <div className={styles.addModalOverlay} onClick={() => setShowAddModal(false)}>
+          <div className={styles.addModalCard} onClick={(e) => e.stopPropagation()}>
+            <h3 className={styles.addModalTitle}>✨ Add New Section</h3>
+            <div className={styles.addOptionsGrid}>
+              {AVAILABLE_SECTIONS.map(item => (
+                <button
+                  key={item.type}
+                  className={styles.addOptionBtn}
+                  onClick={() => addSection(item.type)}
+                >
+                  <span>{item.icon}</span>
+                  <span>{item.name}</span>
+                </button>
+              ))}
+            </div>
+            <button className="btn btn-secondary" onClick={() => setShowAddModal(false)}>
+              Cancel
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
@@ -243,11 +354,29 @@ function SectionEditor({ section, index, onUpdate, theme }: any) {
   )
 }
 
+function getDefaultContentForType(type: string): any {
+  switch (type) {
+    case 'cake':
+      return { heading: 'Make a Wish! 🎂', instruction: 'Tap the candles to blow them out', wishMessage: 'May all your dreams come true! 🎉' }
+    case 'story_book':
+      return { heading: 'Our Story & Journey 📖', subheading: 'A Beautiful 3D Memoir of Shared Moments 🤍' }
+    case 'chat_theater':
+      return { heading: 'Interactive Memory Room 💬✨', subheading: 'Watch character avatars relive sweet conversations!' }
+    case 'quiz':
+      return { heading: 'How Well Do You Know Us? 🤔' }
+    case 'letter':
+      return { heading: 'A Special Letter for You 💌', body: 'I wanted to take a moment to say how much you mean to me. ❤️' }
+    default:
+      return { heading: `New ${formatSectionType(type)}` }
+  }
+}
+
 function getSectionIcon(type: string): string {
   const icons: Record<string, string> = {
-    hero: '🌟', story: '📖', gallery: '🖼️', timeline: '⏳',
+    hero: '🌟', story: '📖', story_book: '📖', chat_theater: '🎭', gallery: '🖼️', timeline: '⏳',
     letter: '💌', quote: '💬', countdown: '⏰', divider: '─',
-    flip_cards: '🃏', click_reveal: '🔮', hidden_message: '🔍',
+    flip_cards: '🃏', click_reveal: '🔮', hidden_message: '🔍', cake: '🎂', quiz: '🤔',
+    scratch_card: '🎁', crystal_ball: '🔮', vibe_check: '📊', memory_capsules: '💬',
     confetti: '🎉', heart_animation: '❤️', ending: '🏁',
   }
   return icons[type] || '📄'
