@@ -1,0 +1,10 @@
+.ending { position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 80px 24px; text-align: center; overflow: hidden; }
+.bgGlow { position: absolute; inset: 0; }
+.content { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 24px; max-width: 640px; }
+.heading { font-family: var(--exp-font,serif); font-size: clamp(2.25rem,6vw,4rem); font-weight: 700; color: #F8F8FF; letter-spacing: -0.03em; line-height: 1.15; animation: fadeInUp 0.8s ease both; }
+.message { font-size: 1.125rem; color: rgba(248,248,255,0.7); line-height: 1.8; animation: fadeInUp 0.8s ease 200ms both; }
+.from { font-family: 'Dancing Script', cursive; font-size: 1.5rem; color: var(--exp-primary,#7C3AED); animation: fadeInUp 0.8s ease 300ms both; }
+.cta { display: inline-block; padding: 16px 36px; border-radius: 9999px; color: white; font-size: 1rem; font-weight: 700; font-family: inherit; text-decoration: none; transition: transform 200ms, box-shadow 200ms; box-shadow: 0 4px 24px rgba(0,0,0,0.3); animation: fadeInUp 0.8s ease 400ms both; }
+.cta:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 8px 40px rgba(0,0,0,0.4); }
+.footer { margin-top: 16px; display: flex; align-items: center; gap: 6px; font-size: 0.875rem; color: rgba(248,248,255,0.3); animation: fadeInUp 0.8s ease 500ms both; }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }

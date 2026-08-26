@@ -1,0 +1,118 @@
+.timeline {
+  padding: 80px 24px;
+  position: relative;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.heading {
+  font-family: var(--exp-font, 'Playfair Display', serif);
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 600;
+  color: #F8F8FF;
+  letter-spacing: -0.02em;
+}
+
+.track {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  transform: translateX(-50%);
+  opacity: 0.4;
+}
+
+.event {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 48px;
+}
+
+.eventLeft {
+  flex-direction: row-reverse;
+  padding-left: calc(50% + 40px);
+}
+
+.eventRight {
+  flex-direction: row;
+  padding-right: calc(50% + 40px);
+}
+
+.eventLeft .eventCard {
+  text-align: right;
+}
+
+.eventDot {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 3px solid var(--color-bg, #0A0A0F);
+  margin-top: 8px;
+  z-index: 1;
+}
+
+.eventCard {
+  background: rgba(22, 22, 31, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  backdrop-filter: blur(12px);
+  transition: transform 250ms, box-shadow 250ms;
+}
+
+.eventCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.3);
+}
+
+.eventEmoji {
+  font-size: 1.5rem;
+}
+
+.eventDate {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--exp-primary, #7C3AED);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.eventTitle {
+  font-family: var(--exp-font, 'Playfair Display', serif);
+  font-size: 1.1875rem;
+  font-weight: 600;
+  color: #F8F8FF;
+  line-height: 1.3;
+}
+
+.eventDesc {
+  font-size: 0.9rem;
+  color: rgba(248, 248, 255, 0.6);
+  line-height: 1.7;
+}
+
+@media (max-width: 640px) {
+  .line { left: 24px; }
+  .event { flex-direction: column; padding: 0 0 0 56px; }
+  .eventLeft { flex-direction: column; padding: 0 0 0 56px; }
+  .eventRight { padding: 0 0 0 56px; }
+  .eventLeft .eventCard { text-align: left; }
+  .eventDot { left: 24px; }
+}

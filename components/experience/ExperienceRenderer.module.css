@@ -1,0 +1,51 @@
+.renderer {
+  font-family: var(--exp-font, 'Inter', sans-serif);
+  background: var(--color-bg, #0A0A0F);
+  color: var(--color-text-primary, #F8F8FF);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.sectionWrapper {
+  position: relative;
+}
+
+.unknownSection {
+  padding: 20px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px dashed rgba(239, 68, 68, 0.3);
+  color: #FCA5A5;
+  font-family: monospace;
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+.preview {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Mood-specific overrides */
+.mood-romantic {
+  background: linear-gradient(180deg, #0A0A0F 0%, #12071A 50%, #0A0A0F 100%);
+}
+
+.mood-elegant {
+  background: linear-gradient(180deg, #0A0A10 0%, #0F0F1A 100%);
+}
+
+.mood-playful {
+  background: linear-gradient(180deg, #0A0A0F 0%, #0A120F 100%);
+}
+
+.mood-cinematic {
+  background: #050508;
+}
+
+.mood-minimal {
+  background: #0C0C0F;
+}
+
+.mood-vintage {
+  background: linear-gradient(180deg, #0A0804 0%, #12100A 100%);
+}

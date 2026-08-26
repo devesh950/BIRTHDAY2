@@ -1,0 +1,82 @@
+.section {
+  padding: 60px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.heading {
+  font-family: var(--exp-font, 'Playfair Display', serif);
+  font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+  color: #F8F8FF;
+  text-align: center;
+}
+
+.card {
+  width: 100%;
+  max-width: 480px;
+  background: rgba(22, 22, 31, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  backdrop-filter: blur(12px);
+}
+
+.playBtn {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: none;
+  color: white;
+  font-size: 1.25rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 200ms;
+}
+
+.playBtn:hover {
+  transform: scale(1.06);
+}
+
+.info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: rgba(248, 248, 255, 0.8);
+}
+
+.waveform {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  height: 28px;
+}
+
+.bar {
+  flex: 1;
+  background: rgba(248, 248, 255, 0.3);
+  border-radius: 2px;
+}
+
+.barAnimated {
+  animation: pulseBar 0.8s ease-in-out infinite alternate;
+  background: #A78BFA;
+}
+
+@keyframes pulseBar {
+  0% { transform: scaleY(0.4); }
+  100% { transform: scaleY(1.2); }
+}

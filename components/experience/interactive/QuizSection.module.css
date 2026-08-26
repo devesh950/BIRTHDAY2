@@ -1,0 +1,117 @@
+.section {
+  padding: 80px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.heading {
+  font-family: var(--exp-font, 'Playfair Display', serif);
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  color: #F8F8FF;
+  text-align: center;
+}
+
+.quizCard, .resultCard {
+  max-width: 560px;
+  width: 100%;
+  background: rgba(22, 22, 31, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 36px;
+  backdrop-filter: blur(16px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.progress {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: rgba(248, 248, 255, 0.45);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.questionText {
+  font-family: var(--exp-font, serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #F8F8FF;
+  line-height: 1.5;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.optionBtn {
+  width: 100%;
+  padding: 14px 20px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #F8F8FF;
+  font-size: 0.9375rem;
+  font-family: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 200ms;
+}
+
+.optionBtn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.correct {
+  background: rgba(16, 185, 129, 0.2) !important;
+  border-color: #10B981 !important;
+  color: #6EE7B7 !important;
+}
+
+.wrong {
+  background: rgba(239, 68, 68, 0.2) !important;
+  border-color: #EF4444 !important;
+  color: #FCA5A5 !important;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.explanation {
+  font-size: 0.875rem;
+  color: rgba(248, 248, 255, 0.6);
+  width: 100%;
+}
+
+.resultCard {
+  text-align: center;
+  align-items: center;
+}
+
+.resultIcon {
+  font-size: 3.5rem;
+}
+
+.resultScore {
+  font-family: var(--exp-font, serif);
+  font-size: 1.75rem;
+  color: #F8F8FF;
+}
+
+.resultText {
+  font-size: 1rem;
+  color: rgba(248, 248, 255, 0.7);
+}
