@@ -202,6 +202,21 @@ export function getMockExperienceJson(input: Partial<GeneratePromptInput>) {
       },
     },
     {
+      type: 'story_book',
+      content: {
+        heading: 'Hamari Kahani 📖',
+        subheading: 'A 3D Book Journey Through Our Memories 🤍',
+        pin: '0509',
+      },
+    },
+    {
+      type: 'chat_theater',
+      content: {
+        heading: 'Animated Memory Room 👦💕🌸',
+        subheading: 'Watch our avatars relive iconic conversations & memories!',
+      },
+    },
+    {
       type: 'memory_capsules',
       content: {
         heading: 'Memory Capsules ✨',

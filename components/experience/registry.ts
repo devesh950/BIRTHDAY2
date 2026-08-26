@@ -43,11 +43,14 @@ import VoiceMessageSection from './interactive/VoiceMessageSection'
 import CrystalBallSection from './interactive/CrystalBallSection'
 import VibeCheckSection from './interactive/VibeCheckSection'
 import MemoryCapsulesSection from './interactive/MemoryCapsulesSection'
+import StoryBookSection from './sections/StoryBookSection'
+import ChatTheaterSection from './interactive/ChatTheaterSection'
 
 export const componentRegistry: Record<string, ComponentType<SectionComponentProps>> = {
   opening:          OpeningSection,
   hero:             HeroSection,
   story:            StorySection,
+  story_book:       StoryBookSection,
   gallery:          GallerySection,
   timeline:         TimelineSection,
   letter:           LetterSection,
@@ -64,6 +67,7 @@ export const componentRegistry: Record<string, ComponentType<SectionComponentPro
   crystal_ball:     CrystalBallSection,
   vibe_check:       VibeCheckSection,
   memory_capsules:  MemoryCapsulesSection,
+  chat_theater:     ChatTheaterSection,
   confetti:         ConfettiSection,
   heart_animation:  HeartAnimationSection,
   ending:           EndingSection,
