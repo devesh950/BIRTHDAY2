@@ -9,8 +9,8 @@
 .sectionHeading {
   font-family: var(--exp-font, 'Playfair Display', serif);
   font-size: clamp(1.75rem, 4vw, 2.5rem);
-  font-weight: 600;
-  color: #F8F8FF;
+  font-weight: 800;
+  color: #1E1B4B;
   text-align: center;
   letter-spacing: -0.02em;
 }
@@ -34,10 +34,10 @@
 .envelopeBody {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, var(--primary, #7C3AED), var(--secondary, #EC4899));
-  border-radius: 12px;
-  opacity: 0.15;
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  background: linear-gradient(135deg, #8B5CF6, #EC4899);
+  border-radius: 16px;
+  opacity: 0.25;
+  border: 2px solid rgba(139, 92, 246, 0.3);
 }
 
 .envelopeFlap {
@@ -46,10 +46,10 @@
   left: 0;
   right: 0;
   height: 60%;
-  background: linear-gradient(135deg, var(--primary, #7C3AED), var(--secondary, #EC4899));
+  background: linear-gradient(135deg, #8B5CF6, #EC4899);
   clip-path: polygon(0 0, 100% 0, 50% 100%);
-  opacity: 0.3;
-  border-radius: 12px 12px 0 0;
+  opacity: 0.4;
+  border-radius: 16px 16px 0 0;
 }
 
 .envelopePaper {
@@ -58,8 +58,8 @@
   left: 20px;
   right: 20px;
   bottom: 16px;
-  background: rgba(248, 248, 255, 0.08);
-  border-radius: 6px;
+  background: #FFFFFF;
+  border-radius: 8px;
 }
 
 .envelopeHint {
@@ -71,7 +71,8 @@
   align-items: center;
   gap: 6px;
   font-size: 0.875rem;
-  color: rgba(248, 248, 255, 0.5);
+  font-weight: 600;
+  color: #7C3AED;
   white-space: nowrap;
 }
 
@@ -79,15 +80,16 @@
 .letterCard {
   max-width: 640px;
   width: 100%;
-  background: rgba(22, 22, 31, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1.5px solid rgba(255, 255, 255, 0.9);
+  border-radius: 28px;
   padding: 48px;
   display: flex;
   flex-direction: column;
   gap: 24px;
   position: relative;
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 24px 60px rgba(139, 92, 246, 0.12);
 }
 
 .letterCard::before {
@@ -97,7 +99,7 @@
   left: 32px;
   font-family: var(--exp-font, 'Playfair Display', serif);
   font-size: 5rem;
-  color: var(--exp-primary, #7C3AED);
+  color: #8B5CF6;
   opacity: 0.15;
   line-height: 1;
   pointer-events: none;
@@ -115,12 +117,12 @@
 .letterTo {
   font-family: var(--exp-font, 'Playfair Display', serif);
   font-size: 1.375rem;
-  color: rgba(248, 248, 255, 0.9);
-  font-weight: 500;
+  color: #1E1B4B;
+  font-weight: 700;
 }
 
 .letterTo em {
-  color: var(--exp-primary, #7C3AED);
+  color: #7C3AED;
   font-style: italic;
 }
 
@@ -133,20 +135,20 @@
 .letterParagraph {
   font-size: 1.0625rem;
   line-height: 1.9;
-  color: rgba(248, 248, 255, 0.75);
+  color: #374151;
 }
 
 .letterSignature {
-  font-family: 'Dancing Script', cursive, var(--exp-font, serif);
-  font-size: 2rem;
+  font-family: 'Great Vibes', cursive, var(--exp-font, serif);
+  font-size: 2.5rem;
   font-weight: 600;
-  color: var(--exp-primary, #7C3AED);
+  color: #7C3AED;
   margin-top: 8px;
 }
 
 .letterFrom {
   font-size: 0.9375rem;
-  color: rgba(248, 248, 255, 0.5);
+  color: #6B7280;
   font-style: italic;
 }
 

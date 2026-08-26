@@ -6,12 +6,13 @@
   justify-content: center;
   overflow: hidden;
   padding: 80px 24px;
+  background: linear-gradient(135deg, #FFF0F5 0%, #F5F3FF 50%, #ECE9FE 100%);
 }
 
 .overlay {
   position: absolute;
   inset: 0;
-  background: var(--color-bg, #0A0A0F);
+  background: transparent;
   pointer-events: none;
 }
 
@@ -47,6 +48,12 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1.5px solid rgba(255, 255, 255, 0.9);
+  border-radius: 36px;
+  padding: 56px 40px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 24px 60px rgba(139, 92, 246, 0.12);
 }
 
 .align-center .content {
@@ -66,18 +73,17 @@
 
 .headline {
   font-family: var(--exp-font, 'Playfair Display', serif);
-  font-size: clamp(2.5rem, 8vw, 6rem);
-  font-weight: 700;
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  font-weight: 800;
   line-height: 1.1;
   letter-spacing: -0.03em;
-  color: #F8F8FF;
-  text-shadow: 0 4px 40px rgba(0, 0, 0, 0.5);
+  color: #1E1B4B;
   animation: fadeInUp 1s ease both;
 }
 
 .subheadline {
-  font-size: clamp(1rem, 2.5vw, 1.375rem);
-  color: rgba(248, 248, 255, 0.75);
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  color: #4B5563;
   line-height: 1.7;
   max-width: 560px;
   animation: fadeInUp 1s ease 200ms both;
@@ -91,7 +97,7 @@
 .scrollDot {
   width: 28px;
   height: 44px;
-  border: 2px solid rgba(248, 248, 255, 0.3);
+  border: 2px solid #8B5CF6;
   border-radius: 14px;
   position: relative;
   display: flex;
@@ -103,7 +109,7 @@
   content: '';
   width: 4px;
   height: 8px;
-  background: rgba(248, 248, 255, 0.5);
+  background: #EC4899;
   border-radius: 2px;
   animation: scrollBounce 2s ease-in-out infinite;
 }
