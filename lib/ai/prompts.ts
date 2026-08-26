@@ -188,6 +188,27 @@ export function getMockExperienceJson(input: Partial<GeneratePromptInput>) {
       },
     },
     {
+      type: 'crystal_ball',
+      content: {
+        heading: 'Crystal Ball of Future Wishes 🌟',
+        subheading: 'Tap or rub the floating Crystal Ball to reveal a secret Birthday Blessing! 🔮',
+      },
+    },
+    {
+      type: 'vibe_check',
+      content: {
+        heading: 'Vibe Check & Superpowers 🌟',
+        subheading: 'Research conducted by someone who knows you way too well! 😌✨',
+      },
+    },
+    {
+      type: 'memory_capsules',
+      content: {
+        heading: 'Memory Capsules ✨',
+        subheading: 'A slide through our favorite shared moments and quotes 💬',
+      },
+    },
+    {
       type: 'letter',
       content: {
         heading: 'A Letter For You',

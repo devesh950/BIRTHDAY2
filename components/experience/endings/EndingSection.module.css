@@ -1,10 +1,202 @@
-.ending { position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 80px 24px; text-align: center; overflow: hidden; }
-.bgGlow { position: absolute; inset: 0; }
-.content { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 24px; max-width: 640px; }
-.heading { font-family: var(--exp-font,serif); font-size: clamp(2.25rem,6vw,4rem); font-weight: 700; color: #F8F8FF; letter-spacing: -0.03em; line-height: 1.15; animation: fadeInUp 0.8s ease both; }
-.message { font-size: 1.125rem; color: rgba(248,248,255,0.7); line-height: 1.8; animation: fadeInUp 0.8s ease 200ms both; }
-.from { font-family: 'Dancing Script', cursive; font-size: 1.5rem; color: var(--exp-primary,#7C3AED); animation: fadeInUp 0.8s ease 300ms both; }
-.cta { display: inline-block; padding: 16px 36px; border-radius: 9999px; color: white; font-size: 1rem; font-weight: 700; font-family: inherit; text-decoration: none; transition: transform 200ms, box-shadow 200ms; box-shadow: 0 4px 24px rgba(0,0,0,0.3); animation: fadeInUp 0.8s ease 400ms both; }
-.cta:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 8px 40px rgba(0,0,0,0.4); }
-.footer { margin-top: 16px; display: flex; align-items: center; gap: 6px; font-size: 0.875rem; color: rgba(248,248,255,0.3); animation: fadeInUp 0.8s ease 500ms both; }
-@keyframes fadeInUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+.ending {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 24px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.bgGlow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  max-width: 540px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.heading {
+  font-family: var(--exp-font, 'Playfair Display', serif);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  color: #F8F8FF;
+  letter-spacing: -0.02em;
+}
+
+.message {
+  font-size: 1.125rem;
+  color: rgba(248, 248, 255, 0.7);
+  line-height: 1.7;
+}
+
+.from {
+  font-family: var(--exp-font, serif);
+  font-size: 1.25rem;
+  font-style: italic;
+  color: rgba(248, 248, 255, 0.9);
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  max-width: 320px;
+  margin-top: 12px;
+}
+
+.grandFinaleBtn {
+  width: 100%;
+  padding: 16px 28px;
+  border-radius: 9999px;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  transition: transform 200ms;
+}
+
+.grandFinaleBtn:hover {
+  transform: scale(1.04);
+}
+
+.cta {
+  width: 100%;
+  padding: 14px 28px;
+  border-radius: 9999px;
+  border: 1px solid;
+  color: #F8F8FF;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 200ms;
+}
+
+.cta:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8125rem;
+  color: rgba(248, 248, 255, 0.4);
+  margin-top: 24px;
+}
+
+/* Modal */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 600;
+  background: rgba(10, 10, 15, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  backdrop-filter: blur(20px);
+}
+
+.modalCard {
+  max-width: 440px;
+  width: 100%;
+  background: rgba(22, 22, 31, 0.95);
+  border: 1.5px solid;
+  border-radius: 28px;
+  padding: 40px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  text-align: center;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.7);
+  animation: cardPop 0.5s ease-out;
+}
+
+@keyframes cardPop {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.modalHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.timerRing {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 2px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.25rem;
+  color: #F8F8FF;
+}
+
+.modalSub {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #A78BFA;
+  letter-spacing: 0.08em;
+}
+
+.phaseBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.phaseCrown, .phaseHeart {
+  font-size: 3rem;
+}
+
+.phaseTitle {
+  font-family: var(--exp-font, serif);
+  font-size: 1.5rem;
+  color: #F8F8FF;
+}
+
+.phaseDesc {
+  font-size: 1rem;
+  color: rgba(248, 248, 255, 0.7);
+  line-height: 1.6;
+}
+
+.modalFooterBtns {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}

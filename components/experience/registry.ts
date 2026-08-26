@@ -40,6 +40,9 @@ import CakeSection from './interactive/CakeSection'
 import QuizSection from './interactive/QuizSection'
 import ScratchCardSection from './interactive/ScratchCardSection'
 import VoiceMessageSection from './interactive/VoiceMessageSection'
+import CrystalBallSection from './interactive/CrystalBallSection'
+import VibeCheckSection from './interactive/VibeCheckSection'
+import MemoryCapsulesSection from './interactive/MemoryCapsulesSection'
 
 export const componentRegistry: Record<string, ComponentType<SectionComponentProps>> = {
   opening:          OpeningSection,
@@ -58,6 +61,9 @@ export const componentRegistry: Record<string, ComponentType<SectionComponentPro
   quiz:             QuizSection,
   scratch_card:     ScratchCardSection,
   voice_message:    VoiceMessageSection,
+  crystal_ball:     CrystalBallSection,
+  vibe_check:       VibeCheckSection,
+  memory_capsules:  MemoryCapsulesSection,
   confetti:         ConfettiSection,
   heart_animation:  HeartAnimationSection,
   ending:           EndingSection,

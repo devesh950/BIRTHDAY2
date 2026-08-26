@@ -1,0 +1,111 @@
+.section {
+  padding: 60px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.secHead {
+  text-align: center;
+  max-width: 560px;
+}
+
+.secBadge {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #F59E0B;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.heading {
+  font-family: var(--exp-font, 'Playfair Display', serif);
+  font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+  color: #F8F8FF;
+  margin-top: 6px;
+}
+
+.subheading {
+  font-size: 0.9375rem;
+  color: rgba(248, 248, 255, 0.6);
+  margin-top: 4px;
+}
+
+.card {
+  max-width: 520px;
+  width: 100%;
+  background: rgba(22, 22, 31, 0.85);
+  border: 1.5px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  backdrop-filter: blur(16px);
+}
+
+.headerRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.capsuleTag {
+  padding: 6px 14px;
+  border-radius: 9999px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: white;
+}
+
+.navBtns {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navBtn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: white;
+  font-size: 1.25rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 150ms;
+}
+
+.navBtn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.counter {
+  font-size: 0.8125rem;
+  color: rgba(248, 248, 255, 0.5);
+  font-weight: 600;
+}
+
+.bodyBox {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.quote {
+  font-family: var(--exp-font, serif);
+  font-size: 1.1875rem;
+  font-weight: 600;
+  color: #F8F8FF;
+  line-height: 1.5;
+}
+
+.subtitle {
+  font-size: 0.875rem;
+  color: rgba(248, 248, 255, 0.5);
+  font-style: italic;
+}
