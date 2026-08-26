@@ -47,17 +47,18 @@ export default function PublishedExperienceView({ experience, mediaMap, musicUrl
 
       {/* Entry Screen for Music Autoplay compliance */}
       {!entered && (
-        <div className={styles.entryOverlay}>
+        <div className={styles.entryOverlay} onClick={handleEnter}>
           <div className={styles.entryCard} style={{ borderColor: `${experience.theme.primaryColor}55` }}>
-            <span className={styles.entryEmoji}>✨</span>
-            <h1 className={styles.entryTitle}>A little something for you</h1>
+            <span className={styles.entryEmoji}>💌</span>
+            <p style={{ fontSize: '0.875rem', color: 'rgba(248,248,255,0.5)', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 600 }}>A little something for you...</p>
+            <h1 className={styles.entryTitle}>Ready to see your surprise?</h1>
             <p className={styles.entrySubtitle}>Turn your volume up for the best experience 🎵</p>
             <button
               className={styles.entryBtn}
-              onClick={handleEnter}
+              onClick={(e) => { e.stopPropagation(); handleEnter(); }}
               style={{ background: `linear-gradient(135deg, ${experience.theme.primaryColor}, ${experience.theme.secondaryColor})` }}
             >
-              Start the Surprise ❤️
+              Enter the Experience ❤️
             </button>
           </div>
         </div>

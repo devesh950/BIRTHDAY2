@@ -35,12 +35,14 @@ export interface SectionComponentProps {
 // To add a new component type: add one entry here.
 // ==========================================
 
+import OpeningSection from './sections/OpeningSection'
 import CakeSection from './interactive/CakeSection'
 import QuizSection from './interactive/QuizSection'
 import ScratchCardSection from './interactive/ScratchCardSection'
 import VoiceMessageSection from './interactive/VoiceMessageSection'
 
 export const componentRegistry: Record<string, ComponentType<SectionComponentProps>> = {
+  opening:          OpeningSection,
   hero:             HeroSection,
   story:            StorySection,
   gallery:          GallerySection,

@@ -106,9 +106,9 @@ export function getMockExperienceJson(input: Partial<GeneratePromptInput>) {
       type: 'hero',
       content: {
         headline: `For ${input.recipientName || 'You'} ✨`,
-        subheadline: 'Because some people deserve more than just words.',
+        subheadline: 'Because some people deserve more than just words. They deserve a memory.',
         backgroundType: 'gradient',
-        backgroundValue: `linear-gradient(135deg, ${palette.primary}22, ${palette.secondary}22)`,
+        backgroundValue: `linear-gradient(135deg, ${palette.primary}33, ${palette.secondary}22)`,
         showParticles: true,
         alignment: 'center',
         overlayOpacity: 0.3,
@@ -117,13 +117,24 @@ export function getMockExperienceJson(input: Partial<GeneratePromptInput>) {
     {
       type: 'story',
       content: {
-        heading: 'Our Story',
+        heading: 'Our Story & Journey',
         paragraphs: [
           `Every great story starts somewhere. Ours started with a simple moment that changed everything.`,
           `Since that day, life has been a beautiful adventure — full of laughter, warmth, and memories I'll carry forever.`,
           `This is my way of saying: you matter more than you know.`,
         ],
         showDecorative: true,
+      },
+    },
+    {
+      type: 'timeline',
+      content: {
+        heading: 'Moments etched in time ⏳',
+        events: [
+          { date: 'Day 01', title: 'The Day We Met', description: 'A chance encounter that became the start of something truly special.', emoji: '☕' },
+          { date: 'Year 01', title: 'Our First Big Adventure', description: 'Exploring new places, laughing until our stomachs hurt.', emoji: '✈️' },
+          { date: 'Today', title: 'Celebrating You', description: 'Honouring the incredible person you are every single day.', emoji: '✨' },
+        ],
       },
     },
   ]
@@ -141,31 +152,6 @@ export function getMockExperienceJson(input: Partial<GeneratePromptInput>) {
 
   sections.push(
     {
-      type: 'quiz',
-      content: {
-        heading: 'How Well Do You Know Us? 🤔',
-        questions: [
-          {
-            question: 'What is our absolute favorite memory together?',
-            options: ['That late night drive', 'Our first coffee catchup', 'The Jaipur trip', 'All of the above!'],
-            correctIndex: 3,
-            explanation: 'Correct! Every single moment together has been special ❤️',
-          },
-        ],
-      },
-    },
-    {
-      type: 'letter',
-      content: {
-        heading: 'A Letter For You',
-        from: input.senderName || 'Someone Who Cares',
-        to: input.recipientName || 'You',
-        body: `Dear ${input.recipientName || 'You'},\n\nI've been wanting to say this for a while. Some feelings are too big for a text message, so I made this instead.\n\nYou are extraordinary in the most quiet, consistent, beautiful ways. I notice everything — the way you make people feel seen, the warmth you carry into every room, the way you laugh when something genuinely catches you off guard.\n\nThank you for being you. Thank you for being in my life.\n\nWith all my heart,\n${input.senderName || 'Someone Who Cares'}`,
-        showEnvelopeAnimation: true,
-        signature: input.senderName || '💛',
-      },
-    },
-    {
       type: 'flip_cards',
       content: {
         heading: 'Things I Love About You',
@@ -178,6 +164,38 @@ export function getMockExperienceJson(input: Partial<GeneratePromptInput>) {
           { front: '🌙', back: 'Late night conversations with you', frontEmoji: '🌙' },
           { front: '☀️', back: 'The way you light up any room you walk into', frontEmoji: '☀️' },
         ],
+      },
+    },
+    {
+      type: 'quiz',
+      content: {
+        heading: 'How Well Do You Know Us? 🤔',
+        questions: [
+          {
+            question: 'What is our absolute favorite memory together?',
+            options: ['That late night drive', 'Our first coffee catchup', 'The trip we planned', 'All of the above!'],
+            correctIndex: 3,
+            explanation: 'Correct! Every single moment together has been special ❤️',
+          },
+        ],
+      },
+    },
+    {
+      type: 'scratch_card',
+      content: {
+        heading: 'Scratch to Reveal a Secret Message 🎁',
+        secretMessage: 'You are the most precious gift in my life! ❤️',
+      },
+    },
+    {
+      type: 'letter',
+      content: {
+        heading: 'A Letter For You',
+        from: input.senderName || 'Someone Who Cares',
+        to: input.recipientName || 'You',
+        body: `Dear ${input.recipientName || 'You'},\n\nI've been wanting to say this for a while. Some feelings are too big for a text message, so I made this instead.\n\nYou are extraordinary in the most quiet, consistent, beautiful ways. I notice everything — the way you make people feel seen, the warmth you carry into every room, the way you laugh when something genuinely catches you off guard.\n\nThank you for being you. Thank you for being in my life.\n\nWith all my heart,\n${input.senderName || 'Someone Who Cares'}`,
+        showEnvelopeAnimation: true,
+        signature: input.senderName || '💛',
       },
     },
     {
